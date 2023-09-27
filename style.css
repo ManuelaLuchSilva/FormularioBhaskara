@@ -1,0 +1,24 @@
+form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 25px 25px 30px 25px;
+    background-color: rgb(250, 247, 237);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+label, input[type="text"], input[type="number"]{
+    margin-left: 20px;
+}
+h1{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input[type="button"]{
+    margin: 10px;
+    background-color: rgb(212, 196, 177);
+}
+input[type="button"]:hover{
+    transition: 200ms linear;
+    background-color: rgba(235, 164, 164);
+}

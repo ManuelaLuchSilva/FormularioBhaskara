@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bhaskara</title>
+    <script>
+
+        function calcular(){
+            let A = document.getElementById("A").value;
+            let B = document.getElementById("B").value;
+            let C = document.getElementById("C").value;
+            if (A == "") {
+                alert("Informe o valor A");
+            }
+            else if (B == "") {
+                alert("Informe o valor B");
+            }
+            else if(C == ""){
+                alert("Informe o valor C")
+            }
+            else {
+                const delta = (Number(B)*Number(B))-(4*Number(A)*Number(C))
+
+                if(delta<0){
+                    alert("Não tem raiz de valor real")
+                }
+                else if(delta==0 || delta>0){
+                    const x1 = (- Number(B) + Math.sqrt(delta))/(2* Number(A))
+                    const x2 = (+ Number(B) + Math.sqrt(delta))/(2* Number(A))
+                    document.getElementById("valorX1").innerHTML = `<h1>X1=${x1}</h1>`;
+                    document.getElementById("valorX2").innerHTML = `<h1>X2=${x2}</h1>`;
+                }
+            }
+        }
+        function limpar() {
+            document.getElementById("A").value = 0;
+            document.getElementById("B").value = 0;
+            document.getElementById("C").value = 0;
+            document.getElementById("valorX1").innerHTML = ""
+            document.getElementById("valorX2").innerHTML = ""
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="">Valor A</label>
+            <input type="number" id="A">
+        </div>
+        <div>
+            <label for="">Valor B</label>
+            <input type="number" id="B">
+        </div>
+        <div>
+            <label for="">Valor C</label>
+            <input type="number" id="C">
+        </div>
+        <div id="valorX1">
+
+        </div>
+        <div id="valorX2">
+
+        </div>
+        <div id="button">
+            <input type="button" value="Calcular" onclick="calcular();">
+            <input type="button" value="Limpar" onclick="limpar();">
+        </div>
+    </form>
+</body>
+</html>
